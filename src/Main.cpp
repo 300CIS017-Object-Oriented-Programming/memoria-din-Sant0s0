@@ -57,7 +57,9 @@ void mostrarMenuPropietarios(Administracion &adminMenuProp)
         cin >> idPropietario;
         adminMenuProp.imprimirUnPropietario(idPropietario);
         break;
-
+    case 8:
+        adminMenuProp.generarReportePropiedades();
+        break;
     default:
         break;
     }
@@ -69,6 +71,7 @@ void mostrarMenuAdministracion(Administracion &administracionMenuAdmin)
     cout << "1. Recaudar administracion \n";
     cout << "2. Asociar propietario-propiedad \n";
     cout << "3. Agregar propiedad \n";
+    cout << "4. Mostrar reporte-propiedades \n";
     cout << "-1. Volver\n";
     cin >> opc;
 
@@ -84,6 +87,10 @@ void mostrarMenuAdministracion(Administracion &administracionMenuAdmin)
 
     case 3:
         administracionMenuAdmin.agregarPropiedad();
+        break;
+
+        case 4:
+            administracionMenuAdmin.generarReportePropiedades();
         break;
 
     default:
@@ -119,7 +126,9 @@ void menu(Administracion &administracionMenu)
 
 int main()
 {
-
+    int variablepuntero = 10;
+    int *p = &variablepuntero;
+    cout<<*p<<" "<<&variablepuntero<<endl;
     Administracion administracion; // Instanciado con el stack
     menu(administracion);
     return 0;
