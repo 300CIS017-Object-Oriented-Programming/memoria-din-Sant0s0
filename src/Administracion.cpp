@@ -18,16 +18,31 @@ Administracion::Administracion() {
  */
 void Administracion::inicializarDatos() {
     Propietario *persona1 = new Propietario();
+    cout << "el objeto fue creado exitosamente.\n";
+    cout << "Dirección de memoria de persona1: " << &persona1 << endl;
     Propietario *persona2 = new Propietario();
+    cout << "el objeto fue creado exitosamente.\n";
     Propietario *persona3 = new Propietario();
+    cout << "el objeto fue creado exitosamente.\n";
     Propietario *persona4 = new Propietario();
+    cout << "el objeto fue creado exitosamente.\n";
     Propiedad *prop1 = new Propiedad();
+    cout << "el objeto fue creado exitosamente.\n";
+    cout << "Dirección de memoria de prop1: " << prop1 << endl;
     Propiedad *prop2 = new Propiedad();
+    cout << "el objeto fue creado exitosamente.\n";
     Propiedad *prop3 = new Propiedad();
+    cout << "el objeto fue creado exitosamente.\n";
     Propiedad *prop4 = new Propiedad(); // Automaticamente al constructor x defecto
+    cout << "el objeto fue creado exitosamente.\n";
     CuartoUtil *cuarto1 = new CuartoUtil();
+    cout << "el objeto fue creado exitosamente.\n";
     CuartoUtil *cuarto2 = new CuartoUtil();
+    cout << "el objeto fue creado exitosamente.\n";
     CuartoUtil *cuarto3 = new CuartoUtil();
+    cout << "el objeto fue creado exitosamente.\n";
+    cout << "Dirección de memoria de la propiedad dentro de persona1: " << persona1->getPropiedad() << endl;
+
 
     //Inicializar cuartos utiles
     vector<CuartoUtil *> cuartosUtiles;
@@ -257,6 +272,16 @@ void Administracion::imprimirPropietariosConParqueadero() {
         if (propietarios[i]->getPropiedad()->isHayParqueadero()) {
             propietarios[i]->mostrarDatos();
         }
+    }
+}
+
+void Administracion::generarReportePropiedades() {
+    for (int i = 0; i < propietarios.size(); i++) {
+        cout << "Propietario: " << propietarios[i]->getNombre() << "ID: " << propietarios[i]->getIdentificacion() << endl;
+        cout << "Propiedad ID:" << propiedades[i]->getNumIdentificacion() << ", Piso" << propiedades[i]->getPiso() << propiedades[i]->getAreaPropiedad() << endl;
+        cout << "Tiene parqueadero: "<< propiedades[i]->isHayParqueadero()<< endl;
+        cout << "Cuarto util: " << propiedades[i]->getCuartoUtil() << endl;
+        cout << "-------------------------------" << endl;
     }
 }
 
